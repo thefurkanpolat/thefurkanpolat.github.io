@@ -100,6 +100,15 @@
     }
   }
 }
+.icons a img {
+  width: 40px;
+  height: 40px;
+}
+i.fab, i.fa-brands {
+  font-size: 24px;  /* İkon boyutunu artır */
+  margin: 0 10px;   /* İkonlar arasındaki boşluğu düzenle */
+  color: #0077B5;   /* LinkedIn’in mavi rengi */
+}
 
 .down {
   color: #FFF;

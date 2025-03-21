@@ -46,11 +46,12 @@
 .element {
   font-size: 20px;
   font-weight: 400;
-  text-align: #fff;
+  color: #fff;
   margin-top: -5px;
   display: block;
   opacity: 0.8;
   text-align: center; /* Ortalamak için */
+  background-color: transparent;
 }
 
 .header-links {

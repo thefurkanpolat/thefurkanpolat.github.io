@@ -2,8 +2,8 @@
   <div class="header">
       <h1>
         <span class="site-title">{{ site.title }}</span>
-        <span class="element">{{ site.description }}</span>
-        <span class="element" id="animated-text"></span>
+        <span class="element"></span>
+       
       </h1>
       
       <div class="header-icons">
@@ -27,3 +27,14 @@
   </div>
   <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var typed = new Typed(".element", {
+      strings: ["Information Technology Specialist", "Software Developer"],
+      typeSpeed: 50,   // Yazı yazma hızı
+      backSpeed: 30,   // Geri silme hızı
+      loop: true       // Sürekli tekrar etsin mi?
+    });
+  });
+</script>

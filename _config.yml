@@ -1,15 +1,16 @@
 # Site settings
 title: Furkan Polat
-description: TEST
+description: 
 # baseurl: "" # the subpath of your site, e.g. /blog
 # url: "localhost:3000" # the base hostname & protocol for your site e.g.
 
 # User settings
 username: Furkan Polat
+user_description: Merhabalar blog sayfam çok yakında tamamlanacak...iletişim için mail adresim.:<a href="" target="_blank"> thefurkanpolat@gmail.com</a>
 user_title: Software Developer
 email: thefurkanpolat@gmail.com
-twitter_username: desouzafurkan
-github_username: thefurkanpolat
+# twitter_username: 
+# github_username:  
 # gplus_username:  
 
 # Google-analytics

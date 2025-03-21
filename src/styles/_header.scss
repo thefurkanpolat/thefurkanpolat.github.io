@@ -46,11 +46,12 @@
 .element {
   font-size: 20px;
   font-weight: 400;
-  color: #fff;
-  margin-top: -5px;
-
-  text-align: center; /* Ortalamak için */
-
+  color: #ffffff; /* Beyaz renk */
+  display: block;
+  text-align: center;
+  margin-top: 5px;
+  min-height: 30px; /* Animasyon sırasında yüksekliği korur */
+  background-color: transparent; /* Arka planı şeffaf yaparak yazının görünmesini sağlar */
 }
 
 

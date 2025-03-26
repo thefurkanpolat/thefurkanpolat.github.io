@@ -11,29 +11,60 @@
   }
 }
 
-.menu {
-  position: fixed;
-  top: 10px;
-  right: 20px;
-}
-
-.menu ul {
-  list-style: none;
-  padding: 0;
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  display: flex;
+  padding: 0;
 }
 
-.menu li {
-  margin: 0 10px;
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #333;
+  width: 100%;
+  z-index: 100;
 }
 
-.menu a {
+nav ul {
+  list-style-type: none;
+  padding: 10px;
+  margin: 0;
+  text-align: right;
+}
+
+nav li {
+  display: inline;
+  margin-left: 20px;
+}
+
+nav a {
   text-decoration: none;
   color: white;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bold;
+  font-size: 18px;
 }
+
+nav a:hover {
+  color: #f39c12;
+  text-decoration: underline;
+}
+
+section {
+  padding: 100px 20px 20px;
+}
+
+#anasayfa {
+  background-color: #f4f4f4;
+}
+
+#hakkimda {
+  background-color: #fff;
+}
+
+#deneyimler {
+  background-color: #e9ecef;
+}
+
 
 .header {
   font-family: 'Montserrat', sans-serif;

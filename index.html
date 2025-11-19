@@ -1,0 +1,117 @@
+---
+layout: default
+---
+
+<style>
+    /* Bu stiller sadece yetenekler kısmı için geçerli olacaktır */
+    .skills-wrapper {
+        margin-top: 0; 
+        padding: 80px 10%;
+        background-color: #0b0f19; 
+        min-height: 100vh;
+        color: #fff;
+    }
+
+    /* Diğer yetenek kartları stilleri (boyutlandırma, renkler vb. header.html içindeki stillere uyumlu) */
+    .skills-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 40px;
+        color: #fff; 
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        border-bottom: 2px solid #38bdf8;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+
+    .skill-card {
+        background: rgba(30, 41, 59, 0.5);
+        padding: 25px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .skill-card:hover {
+        transform: translateY(-5px);
+        border-color: #38bdf8;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .skill-card h3 {
+        margin-bottom: 20px;
+        color: #38bdf8;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .icon-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .icon-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #e2e8f0;
+    }
+
+    .icon-box i { 
+        font-size: 2.5rem; 
+        margin-bottom: 5px;
+        transition: 0.3s;
+    }
+
+    .icon-box span { 
+        font-size: 0.8rem; 
+        opacity: 0.6; 
+    }
+</style>
+
+<div id="skills" class="skills-wrapper">
+    <div style="text-align: center;">
+        <h2 class="skills-title">Yetenekler & Araçlar</h2>
+    </div>
+
+    <div class="skills-grid">
+        <div class="skill-card">
+            <h3><i class="fa-solid fa-pen-nib"></i> Tasarım</h3>
+            <div class="icon-container">
+                <div class="icon-box"><i class="devicon-photoshop-plain"></i><span>Ps</span></div>
+                <div class="icon-box"><i class="devicon-illustrator-plain"></i><span>Ai</span></div>
+                <div class="icon-box"><i class="devicon-figma-plain"></i><span>Figma</span></div>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3><i class="fa-solid fa-code"></i> Yazılım</h3>
+            <div class="icon-container">
+                <div class="icon-box"><i class="devicon-html5-plain"></i><span>HTML</span></div>
+                <div class="icon-box"><i class="devicon-css3-plain"></i><span>CSS</span></div>
+                <div class="icon-box"><i class="devicon-python-plain"></i><span>Python</span></div>
+                <div class="icon-box"><i class="devicon-react-original"></i><span>React</span></div>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3><i class="fa-solid fa-toolbox"></i> Araçlar</h3>
+            <div class="icon-container">
+                <div class="icon-box"><i class="devicon-git-plain"></i><span>Git</span></div>
+                <div class="icon-box"><i class="devicon-github-original"></i><span>GitHub</span></div>
+                <div class="icon-box"><i class="devicon-vscode-plain"></i><span>VS Code</span></div>
+                <div class="icon-box"><i class="devicon-linux-plain"></i><span>Linux</span></div>
+            </div>
+        </div>
+    </div>
+</div>

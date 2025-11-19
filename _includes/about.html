@@ -1,0 +1,92 @@
+<style>
+    .container {
+        padding: 80px 10%;
+        background-color: #0b0f19; /* Arka planla uyumlu koyu renk */
+        min-height: 100vh;
+        color: #fff;
+    }
+    .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 50px;
+        color: #fff;
+        border-bottom: 2px solid #38bdf8;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+    .center-title { text-align: center; }
+    
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .skill-card {
+        background: rgba(30, 41, 59, 0.5);
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        transition: 0.3s;
+    }
+    .skill-card:hover {
+        border-color: #38bdf8;
+        transform: translateY(-5px);
+    }
+    .skill-card h3 {
+        margin-bottom: 20px;
+        color: #38bdf8;
+        font-size: 1.5rem;
+    }
+    .icon-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .icon-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #fff;
+    }
+    .icon-box i { font-size: 3rem; margin-bottom: 5px; }
+    .icon-box span { font-size: 0.9rem; opacity: 0.7; }
+</style>
+
+<div id="skills" class="container">
+    <div class="center-title">
+        <h2 class="section-title">Yetenekler & Araçlar</h2>
+    </div>
+    
+    <div class="skills-grid">
+        <div class="skill-card">
+            <h3><i class="fa-solid fa-pen-nib"></i> Tasarım</h3>
+            <div class="icon-container">
+                <div class="icon-box"><i class="devicon-photoshop-plain"></i><span>Ps</span></div>
+                <div class="icon-box"><i class="devicon-illustrator-plain"></i><span>Ai</span></div>
+                <div class="icon-box"><i class="devicon-figma-plain"></i><span>Figma</span></div>
+            </div>
+        </div>
+
+        <div class="skill-card">
+            <h3><i class="fa-solid fa-code"></i> Yazılım</h3>
+            <div class="icon-container">
+                <div class="icon-box"><i class="devicon-html5-plain"></i><span>HTML</span></div>
+                <div class="icon-box"><i class="devicon-css3-plain"></i><span>CSS</span></div>
+                <div class="icon-box"><i class="devicon-python-plain"></i><span>Python</span></div>
+                <div class="icon-box"><i class="devicon-react-original"></i><span>React</span></div>
+            </div>
+        </div>
+
+         <div class="skill-card">
+            <h3><i class="fa-solid fa-toolbox"></i> Araçlar</h3>
+            <div class="icon-container">
+                <div class="icon-box"><i class="devicon-git-plain"></i><span>Git</span></div>
+                <div class="icon-box"><i class="devicon-github-original"></i><span>GitHub</span></div>
+                <div class="icon-box"><i class="devicon-vscode-plain"></i><span>VS Code</span></div>
+            </div>
+        </div>
+    </div>
+</div>

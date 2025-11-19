@@ -1,270 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Furkan Polat | Portfolio</title>
+---
+layout: default
+---
+
+<style>
+    .container {
+        padding: 80px 10%;
+        background-color: #0b0f19; /* Arka planla uyumlu koyu renk */
+        min-height: 100vh;
+        color: #fff;
+    }
+    .section-title {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 50px;
+        color: #fff;
+        border-bottom: 2px solid #38bdf8;
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+    .center-title { text-align: center; }
     
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
 
-    <style>
-        /* --- TEMEL AYARLAR --- */
-        :root {
-            --bg-color: #000000;
-            --text-color: #ffffff;
-            --accent-color: #38bdf8;
-        }
+    .skill-card {
+        background: rgba(30, 41, 59, 0.5);
+        padding: 30px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        transition: 0.3s;
+    }
+    .skill-card:hover {
+        border-color: #38bdf8;
+        transform: translateY(-5px);
+    }
+    .skill-card h3 {
+        margin-bottom: 20px;
+        color: #38bdf8;
+        font-size: 1.5rem;
+    }
+    .icon-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .icon-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #fff;
+    }
+    .icon-box i { font-size: 3rem; margin-bottom: 5px; }
+    .icon-box span { font-size: 0.9rem; opacity: 0.7; }
+</style>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            overflow-x: hidden;
-        }
-
-        /* Particles (Arka Plan) için Alan */
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100vh;
-            background-color: #0b0f19; /* Çok koyu mavi-siyah */
-            background-image: url("");
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: 50% 50%;
-            z-index: 1;
-        }
-
-        /* --- HERO SECTION (GİRİŞ) --- */
-        .hero-container {
-            position: relative;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            z-index: 2; /* Efektlerin üstünde dursun */
-            pointer-events: none; /* Mouse tıklamalarını engellemesin */
-        }
-
-        .hero-content {
-            pointer-events: auto; /* İçerik tıklanabilir olsun */
-        }
-
-        .site-title {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            letter-spacing: -1px;
-            text-shadow: 0 0 20px rgba(0,0,0,0.8);
-        }
-
-        .typed-text {
-            font-size: 1.5rem;
-            color: var(--accent-color);
-            font-weight: 300;
-        }
-
-        /* İkonlar */
-        .header-icons {
-            margin-top: 30px;
-            display: flex;
-            gap: 25px;
-            justify-content: center;
-        }
-
-        .header-icons a {
-            color: #ffffff;
-            font-size: 2rem;
-            transition: 0.3s;
-            text-shadow: 0 0 10px rgba(0,0,0,0.5);
-        }
-
-        .header-icons a:hover {
-            color: var(--accent-color);
-            transform: translateY(-5px);
-        }
-
-        /* Aşağı Ok */
-        .scroll-down {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 2rem;
-            color: rgba(255,255,255,0.7);
-            animation: bounce 2s infinite;
-            z-index: 2;
-            pointer-events: auto;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translate(-50%, 0);}
-            40% {transform: translate(-50%, -10px);}
-            60% {transform: translate(-50%, -5px);}
-        }
-
-        /* --- İÇERİK (KARTLAR) --- */
-        .content-section {
-            position: relative;
-            z-index: 2;
-            background: #0b0f19; /* Siyah devam */
-            padding: 80px 10%;
-            border-top: 1px solid #1e293b;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 50px;
-            color: #fff;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .skill-card {
-            background: rgba(30, 41, 59, 0.5);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .skill-card:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-5px);
-        }
-
-        .skill-card h3 { margin-bottom: 20px; color: var(--accent-color); }
-
-        .icon-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .icon-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 3rem;
-            color: #fff;
-        }
-        
-        .icon-box span {
-            font-size: 0.9rem;
-            margin-top: 5px;
-            opacity: 0.7;
-        }
-
-        /* Mobil Uyum */
-        @media (max-width: 768px) {
-            .site-title { font-size: 2.5rem; }
-            .typed-text { font-size: 1.2rem; }
-        }
-    </style>
-</head>
-<body>
-
-    <div id="particles-js"></div>
-
-    <div class="hero-container">
-        <div class="hero-content">
-            <h1 class="site-title">Furkan Polat</h1>
-            
-            <span class="typed-text"></span>
-
-            <div class="header-icons">
-                <a href="mailto:mail@furkanpolat.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
-                <a href="https://www.linkedin.com/in/thefurkanpolat/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/thefurkanpolat" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.instagram.com/thefurkanpolat" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <a href="#skills" class="scroll-down"><i class="fa-solid fa-chevron-down"></i></a>
-
-    <div id="skills" class="content-section">
+<div id="skills" class="container">
+    <div class="center-title">
         <h2 class="section-title">Yetenekler & Araçlar</h2>
-        
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3><i class="fa-solid fa-pen-nib"></i> Tasarım</h3>
-                <div class="icon-container">
-                    <div class="icon-box"><i class="devicon-photoshop-plain"></i><span>Ps</span></div>
-                    <div class="icon-box"><i class="devicon-illustrator-plain"></i><span>Ai</span></div>
-                    <div class="icon-box"><i class="devicon-figma-plain"></i><span>Figma</span></div>
-                </div>
+    </div>
+    
+    <div class="skills-grid">
+        <div class="skill-card">
+            <h3><i class="fa-solid fa-pen-nib"></i> Tasarım</h3>
+            <div class="icon-container">
+                <div class="icon-box"><i class="devicon-photoshop-plain"></i><span>Ps</span></div>
+                <div class="icon-box"><i class="devicon-illustrator-plain"></i><span>Ai</span></div>
+                <div class="icon-box"><i class="devicon-figma-plain"></i><span>Figma</span></div>
             </div>
+        </div>
 
-            <div class="skill-card">
-                <h3><i class="fa-solid fa-code"></i> Yazılım</h3>
-                <div class="icon-container">
-                    <div class="icon-box"><i class="devicon-html5-plain"></i><span>HTML</span></div>
-                    <div class="icon-box"><i class="devicon-css3-plain"></i><span>CSS</span></div>
-                    <div class="icon-box"><i class="devicon-python-plain"></i><span>Python</span></div>
-                    <div class="icon-box"><i class="devicon-react-original"></i><span>React</span></div>
-                </div>
+        <div class="skill-card">
+            <h3><i class="fa-solid fa-code"></i> Yazılım</h3>
+            <div class="icon-container">
+                <div class="icon-box"><i class="devicon-html5-plain"></i><span>HTML</span></div>
+                <div class="icon-box"><i class="devicon-css3-plain"></i><span>CSS</span></div>
+                <div class="icon-box"><i class="devicon-python-plain"></i><span>Python</span></div>
+                <div class="icon-box"><i class="devicon-react-original"></i><span>React</span></div>
             </div>
+        </div>
 
-             <div class="skill-card">
-                <h3><i class="fa-solid fa-toolbox"></i> Araçlar</h3>
-                <div class="icon-container">
-                    <div class="icon-box"><i class="devicon-git-plain"></i><span>Git</span></div>
-                    <div class="icon-box"><i class="devicon-github-original"></i><span>GitHub</span></div>
-                    <div class="icon-box"><i class="devicon-vscode-plain"></i><span>VS Code</span></div>
-                </div>
+         <div class="skill-card">
+            <h3><i class="fa-solid fa-toolbox"></i> Araçlar</h3>
+            <div class="icon-container">
+                <div class="icon-box"><i class="devicon-git-plain"></i><span>Git</span></div>
+                <div class="icon-box"><i class="devicon-github-original"></i><span>GitHub</span></div>
+                <div class="icon-box"><i class="devicon-vscode-plain"></i><span>VS Code</span></div>
             </div>
         </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-    <script>
-        // 1. YAZI EFEKTİ AYARLARI
-        var typed = new Typed(".typed-text", {
-            strings: ["Information Technology Specialist", "Software Developer", "UI/UX Designer"],
-            typeSpeed: 50,
-            backSpeed: 30,
-            loop: true
-        });
-
-        // 2. PARTICLE (UZAY) EFEKTİ AYARLARI
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#ffffff" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.5, "random": false },
-                "size": { "value": 3, "random": true },
-                "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
-                "move": { "enable": true, "speed": 4, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": { "enable": true, "mode": "repulse" },
-                    "onclick": { "enable": true, "mode": "push" },
-                    "resize": true
-                }
-            },
-            "retina_detect": true
-        });
-    </script>
-
-</body>
-</html>
+</div>

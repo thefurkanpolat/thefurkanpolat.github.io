@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     // 1. TYPED.JS (Yazı Efekti)
     var typed = new Typed(".element", {
-      strings: ["Information Technology Specialist", "Software Developer", "UI/UX Designer"],
+      strings: ["Information Technology Specialist"],
       typeSpeed: 50, backSpeed: 30, startDelay: 500, loop: true
     });
 

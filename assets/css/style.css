@@ -58,12 +58,25 @@ body {
     font-size: 2rem;
 }
 
-.header-icons a {
+.header-icons a,
+.header-icons a:link,
+.header-icons a:visited,
+.header-icons a i { /* a etiketi ve içindeki i (ikon) etiketi */
     color: #fff;
     margin: 0 15px;
     transition: 0.3s;
-    text-decoration: none !important;
+    /* Çizgiyi KESİNLİKLE KALDIRAN KURAL */
+    text-decoration: none !important; 
     border: none !important;
+}
+
+/* Hover durumunda çizgi gelmesini de engelleyelim */
+.header-icons a:hover,
+.header-icons a:active {
+    color: #38bdf8;
+    transform: scale(1.1);
+    text-decoration: none !important; /* Çizgi olmamalı */
+    border: none !important; /* Kenarlık olmamalı */
 }
 
 .header-icons a:hover {

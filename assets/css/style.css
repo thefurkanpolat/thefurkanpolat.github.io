@@ -335,6 +335,67 @@ body {
     transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Zıplama efekti */
 }
 
-/* İkon Hover Efekti */
+//* İkon Hover Efekti */
 .skill-card:hover .icon-box:hover i {
-    color: #fff
+    color: #fff;
+    transform: scale(1.2); /* İkon hafif büyüsün */
+    filter: drop-shadow(0 0 10px #38bdf8); /* Neon parlama efekti */
+}
+
+
+    /* =======================================
+   FOOTER (ALT KISIM) STİLLERİ
+   ======================================= */
+.site-footer {
+    padding: 40px 20px;
+    background-color: #020617; /* Sitenin en koyu tonu */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.copyright-text {
+    opacity: 0.7;
+}
+
+/* --- Yapay Zeka Rozeti --- */
+.ai-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(56, 189, 248, 0.2); /* Hafif mavi çerçeve */
+    color: #cbd5e1;
+    transition: 0.3s ease;
+}
+
+.ai-badge:hover {
+    background: rgba(56, 189, 248, 0.1);
+    border-color: #38bdf8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.15);
+}
+
+.ai-badge i {
+    color: #38bdf8;
+}
+
+/* "Gemini 3 Pro" yazısını parlatalım */
+.gemini-text {
+    background: linear-gradient(90deg, #38bdf8, #818cf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}

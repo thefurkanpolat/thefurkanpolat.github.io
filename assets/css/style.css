@@ -172,9 +172,20 @@ body {
    ======================================= */
 .about-section {
     padding: 120px 10%;
-    background-color: var(--bg-dark);
+    
+    /* SİHİRLİ DOKUNUŞ BURADA: */
+    /* Hero bölümünün bittiği Siyah (#000000) renginden başlayıp, 
+       aşağıdaki koyu maviye (#0f1521) yumuşakça geçiyoruz. */
+    background: linear-gradient(to bottom, #000000 0%, #020617 100%);
+    
+    /* O keskin çizgiyi yaratan üst kenarlığı kaldırıyoruz */
+    border-top: none; 
+    border-bottom: none;
+    
+    color: #fff;
     text-align: center;
     position: relative;
+    z-index: 2; /* Hero'nun altında kalmasın */
 }
 
 .about-container {
@@ -250,7 +261,8 @@ body {
    ======================================= */
 .skills-wrapper {
     padding: 100px 10%;
-    background: linear-gradient(180deg, var(--bg-dark) 0%, #0f172a 100%);
+    /* Hakkımda bölümünün bittiği renkten devam etsin */
+    background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
     min-height: 100vh;
 }
 

@@ -51,13 +51,14 @@ body {
 }
 
 /* =======================================
-   HERO ALANI (GİRİŞ)
+   HERO ALANI (GİRİŞ) - UZAY MODU (SPACE MODE) 🚀
    ======================================= */
 #hero-area {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: radial-gradient(circle at center, #1e293b 0%, var(--bg-dark) 100%); /* Derinlikli Arka Plan */
+    /* Daha derin, sonsuz bir siyah/lacivert geçişi */
+    background: radial-gradient(circle at center, #111827 0%, #000000 100%);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -72,77 +73,98 @@ body {
     z-index: 1;
 }
 
+/* Kutuyu Kaldırdık: Artık Sınırsız */
 .header-content {
     text-align: center;
     z-index: 10;
-    padding: 20px;
-    background: rgba(2, 6, 23, 0.3); /* Yazının daha net okunması için hafif karartma */
-    backdrop-filter: blur(3px);
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.05);
+    padding: 0;
+    background: transparent; /* Arka plan yok */
+    border: none; /* Çerçeve yok */
+    box-shadow: none;
+    backdrop-filter: none;
+    /* Hafif bir yukarı süzülme animasyonu */
+    animation: floatUp 1.5s ease-out forwards; 
 }
 
+@keyframes floatUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* İsim: Devasa ve Parlak */
 .site-title {
     display: block;
-    font-size: 4rem;
+    font-size: 5.5rem; /* Çok daha büyük */
     font-weight: 800;
-    margin-bottom: 10px;
-    background: linear-gradient(to right, #fff, #94a3b8);
+    margin-bottom: 15px;
+    color: #fff;
+    /* Beyazdan Gümüşe Parlayan Geçiş */
+    background: linear-gradient(to bottom right, #ffffff 30%, #94a3b8 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; /* Degrade Yazı */
-    letter-spacing: -2px;
+    -webkit-text-fill-color: transparent;
+    /* Neon Parlama Efekti (Glow) */
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+    letter-spacing: -3px;
+    line-height: 1.1;
 }
 
+/* Unvan: Neon Mavi ve Modern */
 .element {
-    font-size: 1.5rem;
-    color: var(--primary);
-    font-weight: 400;
+    font-size: 1.8rem;
+    color: #38bdf8; /* Neon Mavi */
+    font-weight: 500;
     letter-spacing: 1px;
-    text-shadow: 0 0 20px var(--primary-glow);
+    text-transform: uppercase;
+    /* Yazının arkasına hafif bir blur ekleyerek okunurluğu artır */
+    text-shadow: 0 0 20px rgba(56, 189, 248, 0.6); 
+    font-family: 'Courier New', Courier, monospace; /* Kodlama havası için */
 }
 
-/* Sosyal İkonlar */
+/* Sosyal İkonlar: Daha Geniş ve Havalı */
 .header-icons {
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px; /* Araları açtık */
 }
 
 .header-icons a {
-    color: rgba(255,255,255,0.7) !important;
-    font-size: 1.8rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    text-decoration: none !important;
-    border: none !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-size: 2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Yaylanma efekti */
     position: relative;
 }
 
+/* İkonların üzerine gelince patlama efekti */
 .header-icons a:hover {
-    color: var(--primary) !important;
-    transform: translateY(-5px) scale(1.1);
-    text-shadow: 0 0 15px var(--primary);
+    color: #fff !important;
+    transform: translateY(-8px) scale(1.2);
+    text-shadow: 0 0 30px #38bdf8, 0 0 60px #38bdf8; /* Çift katmanlı neon */
 }
 
-/* Aşağı Ok Animasyonu */
+/* Aşağı Ok */
 .down {
     position: absolute;
-    bottom: 30px;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
-    color: rgba(255,255,255,0.5);
-    font-size: 2rem;
+    color: rgba(255,255,255,0.3);
+    font-size: 2.5rem;
     animation: bounce 2s infinite;
     z-index: 10;
     cursor: pointer;
     transition: 0.3s;
 }
-.down:hover { color: var(--primary); }
+.down:hover { 
+    color: #38bdf8; 
+    filter: drop-shadow(0 0 10px #38bdf8);
+}
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {transform: translate(-50%, 0);}
-    40% {transform: translate(-50%, -10px);}
-    60% {transform: translate(-50%, -5px);}
+/* Mobil Ayarı */
+@media (max-width: 768px) {
+    .site-title { font-size: 3.5rem; }
+    .element { font-size: 1.2rem; }
+    .header-icons { gap: 20px; }
 }
 
 /* =======================================

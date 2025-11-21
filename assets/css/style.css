@@ -1,277 +1,306 @@
-/* =======================================
-   GENEL STİLLER (BODY)
-   ======================================= */
-body { 
-    margin: 0; 
-    padding: 0; 
-    background-color: #0b0f19; 
-    color: #fff; 
-    font-family: sans-serif; 
+/* ==========================================================================
+   GEMINI PRO ULTIMATE THEME - FURKAN POLAT
+   ========================================================================== */
+
+/* 1. MODERN FONT IMPORT (Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* 2. GENEL AYARLAR VE RESET */
+:root {
+    --bg-dark: #020617;       /* Derin Uzay Siyahı */
+    --bg-card: rgba(30, 41, 59, 0.4); /* Cam Efekti İçin */
+    --primary: #38bdf8;       /* Neon Mavi */
+    --primary-glow: rgba(56, 189, 248, 0.5);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Poppins', sans-serif; /* Modern Font */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Metin Seçim Rengi (Havalı Detay) */
+::selection {
+    background: var(--primary);
+    color: #000;
+}
+
+/* Özel Scrollbar (Kaydırma Çubuğu) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
 }
 
 /* =======================================
-   HERO ALANI STİLLERİ
+   HERO ALANI (GİRİŞ)
    ======================================= */
 #hero-area {
     position: relative;
     width: 100%;
     height: 100vh;
-    background-color: #0b0f19;
+    background: radial-gradient(circle at center, #1e293b 0%, var(--bg-dark) 100%); /* Derinlikli Arka Plan */
     overflow: hidden;
-    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #particles-js {
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
+    top: 0; left: 0;
     z-index: 1;
 }
 
 .header-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
-    width: 100%;
-    z-index: 2;
+    z-index: 10;
+    padding: 20px;
+    background: rgba(2, 6, 23, 0.3); /* Yazının daha net okunması için hafif karartma */
+    backdrop-filter: blur(3px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
 .site-title {
     display: block;
-    font-size: 3.5rem;
-    font-weight: 700;
+    font-size: 4rem;
+    font-weight: 800;
     margin-bottom: 10px;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Degrade Yazı */
+    letter-spacing: -2px;
 }
 
 .element {
     font-size: 1.5rem;
-    color: #38bdf8;
-    font-weight: 300;
+    color: var(--primary);
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px var(--primary-glow);
 }
 
+/* Sosyal İkonlar */
 .header-icons {
-    margin-top: 25px;
-    font-size: 2rem;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.header-icons a,
-.header-icons a:link,
-.header-icons a:visited,
-.header-icons a i { /* a etiketi ve içindeki i (ikon) etiketi */
-    color: #fff;
-    margin: 0 15px;
-    transition: 0.3s;
-    /* Çizgiyi KESİNLİKLE KALDIRAN KURAL */
-    text-decoration: none !important; 
+.header-icons a {
+    color: rgba(255,255,255,0.7) !important;
+    font-size: 1.8rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none !important;
     border: none !important;
-}
-
-/* Hover durumunda çizgi gelmesini de engelleyelim */
-.header-icons a:hover,
-.header-icons a:active {
-    color: #38bdf8;
-    transform: scale(1.1);
-    text-decoration: none !important; /* Çizgi olmamalı */
-    border: none !important; /* Kenarlık olmamalı */
+    position: relative;
 }
 
 .header-icons a:hover {
-    color: #38bdf8;
-    transform: scale(1.1);
+    color: var(--primary) !important;
+    transform: translateY(-5px) scale(1.1);
+    text-shadow: 0 0 15px var(--primary);
 }
 
+/* Aşağı Ok Animasyonu */
 .down {
     position: absolute;
     bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
-    color: #fff;
+    color: rgba(255,255,255,0.5);
     font-size: 2rem;
     animation: bounce 2s infinite;
-    z-index: 2;
+    z-index: 10;
+    cursor: pointer;
+    transition: 0.3s;
 }
+.down:hover { color: var(--primary); }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translate(-50%, 0);
-    }
-    40% {
-        transform: translate(-50%, -10px);
-    }
-    60% {
-        transform: translate(-50%, -5px);
-    }
-}
-
-@media (max-width: 768px) {
-    .site-title {
-        font-size: 2.5rem;
-    }
-    .element {
-        font-size: 1.2rem;
-    }
+    0%, 20%, 50%, 80%, 100% {transform: translate(-50%, 0);}
+    40% {transform: translate(-50%, -10px);}
+    60% {transform: translate(-50%, -5px);}
 }
 
 /* =======================================
-   YETENEKLER ALANI STİLLERİ
+   HAKKIMDA (ABOUT) - MODERN ORTALANMIŞ
+   ======================================= */
+.about-section {
+    padding: 120px 10%;
+    background-color: var(--bg-dark);
+    text-align: center;
+    position: relative;
+}
+
+.about-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: inline-block;
+}
+
+.about-title::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 4px;
+    background: var(--primary);
+    margin: 10px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.about-subtitle {
+    font-size: 1.2rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.about-text-wrapper p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+/* Neon Buton */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    padding: 15px 40px;
+    background: transparent;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.1);
+}
+
+.btn-primary:hover {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 30px var(--primary-glow);
+    transform: translateY(-3px);
+}
+
+/* =======================================
+   YETENEKLER (SKILLS) - GLASSMORPHISM
    ======================================= */
 .skills-wrapper {
-    margin-top: 0;
-    padding: 80px 10%;
-    background-color: #0b0f19;
+    padding: 100px 10%;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, #0f172a 100%);
     min-height: 100vh;
-    color: #fff;
 }
 
 .skills-title {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
-    border-bottom: 2px solid #38bdf8;
-    display: inline-block;
-    padding-bottom: 10px;
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Kart Tasarımı - Cam Efekti */
 .skill-card {
-    background: rgba(30, 41, 59, 0.5);
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg-card);
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px); /* Buzlu Cam */
+    position: relative;
+    overflow: hidden;
 }
 
+/* Kartın üzerine gelince */
 .skill-card:hover {
-    transform: translateY(-5px);
-    border-color: #38bdf8;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5), inset 0 0 20px rgba(56, 189, 248, 0.1);
 }
 
 .skill-card h3 {
-    margin-bottom: 20px;
-    color: #38bdf8;
-    font-size: 1.3rem;
+    margin-bottom: 30px;
+    color: var(--primary);
+    font-size: 1.4rem;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .icon-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 25px;
 }
 
 .icon-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #e2e8f0;
-}
-
-.icon-box i {
-    font-size: 2.5rem;
-    margin-bottom: 5px;
+    color: var(--text-muted);
     transition: 0.3s;
 }
 
-.icon-box span {
-    font-size: 0.8rem;
-    opacity: 0.6;
-}
-/* =======================================
-   HAKKIMDA (ABOUT) BÖLÜMÜ - ORTALANMIŞ STİL
-   ======================================= */
-.about-section {
-    padding: 100px 10%;
-    background-color: #0f1521; 
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    color: #fff;
-    text-align: center; /* Her şeyi ortalar */
-}
-
-.about-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 1000px; /* Çok yayılmasın diye sınır koyduk */
-    margin: 0 auto;
-}
-
-.about-content-center {
-    width: 100%;
-}
-
-.about-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #fff;
+.icon-box i {
+    font-size: 3rem;
     margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    border-bottom: 2px solid #38bdf8; /* Başlık altı çizgi */
-    display: inline-block;
-    padding-bottom: 10px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* Zıplama efekti */
 }
 
-.about-subtitle {
-    font-size: 1.3rem;
-    color: #38bdf8; /* Mavi renk vurgusu */
-    font-weight: 500;
-    margin-top: 15px;
-    margin-bottom: 30px;
-}
-
-.about-text-wrapper p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #cbd5e1;
-    margin-bottom: 20px;
-    max-width: 800px; /* Metin çok uzun satır olmasın diye */
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* --- Buton Stili (Düzeltildi) --- */
-.about-buttons {
-    margin-top: 40px;
-    display: flex;
-    justify-content: center; /* Butonu ortalar */
-}
-
-.btn-primary {
-    display: inline-block;
-    padding: 15px 40px;
-    background-color: transparent;
-    color: #38bdf8;
-    font-weight: 600;
-    font-size: 1.1rem;
-    border: 2px solid #38bdf8; /* Çerçeveli buton */
-    border-radius: 50px; /* Oval kenarlar */
-    text-decoration: none !important;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: #38bdf8;
-    color: #0b0f19; /* Üzerine gelince yazı koyu, zemin mavi olsun */
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4); /* Parlama efekti */
-    transform: translateY(-3px);
-}
-
-.btn-primary i {
-    margin-right: 8px;
-}
+/* İkon Hover Efekti */
+.skill-card:hover .icon-box:hover i {
+    color: #fff
